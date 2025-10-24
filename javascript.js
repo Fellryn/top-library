@@ -9,6 +9,11 @@ form.addEventListener('submit', (e) => {
         alert("Please enter a title and author");
         return;
     }
+
+    const newBook = new Book(data.title, data.author, data.hasOwnProperty("read"));
+    addBookToLibrary(newBook);
+    populateBookList();
+    form.reset();
 });
 
 function Book(title, author, read) {
@@ -32,15 +37,21 @@ addBookToLibrary(book2);
 const table = document.querySelector("#library-table");
 const tableBody = table.querySelector("tbody");
 
-for (let book of library) {
-    const entry = `<tr data-id="${book.id}">
+function populateBookList() {
+    tableBody.innerHTML = "";
+    for (let book of library) {
+        const entry = `<tr data-id="${book.id}">
                     <td>${book.title}</td>
                     <td>${book.author}</td>
                     <td>${book.read}</td>
                     <td>${book.id}</td>
                     <td><button class="btn-read">Read</button><button class="btn-delete">Delete</button></td>
                     </tr>`;
-    tableBody.innerHTML += (entry);
+        tableBody.innerHTML += (entry);
 
+        
+    }
 }
+
+populateBookList();
 
