@@ -10,3 +10,20 @@ function Book(title, author, read) {
 function addBookToLibrary(book) {
     library.push(book);        
 }
+
+const book1 = new Book("The Expanse", "H.G. Wells", false);
+addBookToLibrary(book1);
+
+
+const table = document.querySelector("#library-table");
+const tableBody = table.querySelector("tbody");
+
+for (let book of library) {
+    const entry = `<tr>
+                    <td>${book.title}</td>
+                    <td>${book.author}</td>
+                    <td>${book.read}</td>
+                    <td>${book.id}</td>
+                    </tr>`;
+    tableBody.innerHTML += (entry);
+}
