@@ -1,5 +1,9 @@
+.container {
+}
+
 table {
     border: 1px solid black;
+    margin: 0 auto;
 }
 
 th,
@@ -10,4 +14,16 @@ td {
 
 tr:nth-of-type(2n + 2) {
     background-color: rgb(223, 223, 223);
+}
+
+.form-container {
+    margin-top: 10px;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    padding: 5px;
 }
