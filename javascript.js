@@ -1,5 +1,16 @@
 const library = [];
 
+const form = document.querySelector("form");
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    if (data.author === "" || data.title === "") {
+        alert("Please enter a title and author");
+        return;
+    }
+});
+
 function Book(title, author, read) {
     this.title = title;
     this.author = author;
@@ -30,4 +41,6 @@ for (let book of library) {
                     <td><button class="btn-read">Read</button><button class="btn-delete">Delete</button></td>
                     </tr>`;
     tableBody.innerHTML += (entry);
+
 }
+
