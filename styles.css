@@ -1,4 +1,11 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: linear-gradient(to top, rgb(64, 82, 247), rgb(113, 174, 253));
+    height: 100vh;
+}
+
 .container {
+
 }
 
 .container > h1 {
@@ -6,22 +13,30 @@
 }
 
 table {
-    border: 1px solid black;
     margin: 0 auto;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 th,
 td {
-    border: 1px solid black;
     padding: 5px;
+    border-radius: 2px;
+    margin: 0px;
+    background-color: rgb(241, 241, 241);
 }
 
-tr:nth-of-type(2n + 2) {
+tbody tr:nth-of-type(2n + 2) td {
     background-color: rgb(236, 236, 236);
 }
 
 .form-container {
     margin-top: 10px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: whitesmoke;
 }
 
 form {
@@ -29,5 +44,46 @@ form {
 }
 
 input {
-    padding: 5px;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
 }
+
+input[type="text"] {
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.219);
+}
+
+button {
+    border-radius: 5px;
+    border: none;
+    padding: 8px 28px;
+    background-color: rgb(123, 162, 248);
+    font-weight: bold;
+    color: whitesmoke;
+    transition: background-color 100ms;
+}
+
+button:hover {
+    background-color: rgb(149, 181, 250);
+}
+
+button:active {
+    background-color: rgb(76, 131, 252);
+}
+
+.btn-delete {
+    background-color: red;
+}
+
+.btn-delete:hover {
+    background-color: rgb(252, 86, 86);
+}
+
+.btn-delete:active {
+    background-color: rgb(180, 0, 0);
+}
+
+.btn-delete {
+    margin-left: 5px;
+}
+
