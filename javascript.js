@@ -27,7 +27,7 @@ function addBookToLibrary(book) {
     library.push(book);        
 }
 
-const book1 = new Book("The Expanse", "H.G. Wells", false);
+const book1 = new Book("The Expanse", "H.G. Wells", true);
 addBookToLibrary(book1);
 
 const book2 = new Book("Three Body Problem", "Some Guy", false)
@@ -48,8 +48,22 @@ function populateBookList() {
                     <td><button class="btn-read">Read</button><button class="btn-delete">Delete</button></td>
                     </tr>`;
         tableBody.innerHTML += (entry);
+    }
 
-        
+    for (let book of library) {
+        const row = tableBody.querySelector(`[data-id="${book.id}"]`);
+        const btnRead = row.querySelector(".btn-read");
+        btnRead.addEventListener('click', () => {
+            book.read = !book.read;
+            populateBookList();
+        });
+
+        const btnDelete = row.querySelector(".btn-delete");
+        btnDelete.addEventListener('click', () => {
+            const index = library.indexOf(book);
+            library.splice(index, 1);
+            populateBookList();
+        });
     }
 }
 
