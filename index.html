@@ -11,57 +11,38 @@
 
 <body>
     <div class="container">
-        <h1>My Library</h1>
+        <div>
+            <h1>My Library</h1>
+            <button id="add-book">Add a Book</button>
+        </div>
 
         <div class="grid">
-            <div class="card">
-                <div>Title</div>
-                <div>Author</div>
-                <div>Read</div>
-                <div><button class="btn-read">Read</button><button class="btn-delete">Delete</button></div>
-            </div>
-            <div class="card">
-                <div>Title</div>
-                <div>Author</div>
-                <div>Read</div>
-                <div>Buttons</div>
-            </div>
-            <div class="card">
-                <div>Title</div>
-                <div>Author</div>
-                <div>Read</div>
-                <div>Buttons</div>
-            </div>
-            <div class="card">
-                <div>Title</div>
-                <div>Author</div>
-                <div>Read</div>
-                <div>Buttons</div>
-            </div>
+
         </div>
 
-        <table id="library-table">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Read</th>
-                    <th>Id</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        <div class="form-container">
-            <form id="form" action="">
-                <input type="text" id="title" name="title" placeholder="Title">
-                <input type="text" id="author" name="author" placeholder="Author">
-                <input type="checkbox" id="read" name="read" placeholder="Author">
-                <label for="read">Read</label>
-                <button type="submit">Add</button>
-            </form>
-        </div>
+        <dialog open>
+            <div class="form-container">
+                <form id="form" action="" method="dialog">
+                    <div class="close-button">
+                        X
+                    </div>
+                    <div>
+                        <label for="title">Title: </label>
+                        <input type="text" id="title" name="title" placeholder="">
+                    </div>
+                    <div>
+                        <label for="author">Author: </label>
+                        <input type="text" id="author" name="author" placeholder="Author">
+                    </div>
+                    <div>
+                        <label for="read">Read: </label>
+                        <input type="checkbox" id="read" name="read" placeholder="Author">
+                    </div>
+                    <button type="submit">Add</button>
+                    <button>X</button>
+                </form>
+            </div>
+        </dialog>
     </div>
 </body>
 

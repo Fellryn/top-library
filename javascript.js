@@ -3,7 +3,7 @@ const library = [];
 const form = document.querySelector("form");
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const data = Object.fromEntries(new FormData(form));
     if (data.author === "" || data.title === "") {
         alert("Please enter a title and author");

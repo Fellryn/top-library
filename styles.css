@@ -5,11 +5,16 @@ body {
 }
 
 .container {
-
+    position: relative;
 }
 
 .container > h1 {
     text-align: center;
+    display: inline;
+}
+
+#add-book {
+    display: inline;
 }
 
 table {
@@ -39,8 +44,10 @@ tbody tr:nth-of-type(2n + 2) td {
     background-color: whitesmoke;
 }
 
-form {
-    text-align: center;
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 input {
@@ -112,3 +119,11 @@ button:active {
     font-weight: bold;
     font-size: 1.2rem;
 }
+
+dialog {
+    position: fixed;
+    top: 200px;
+    border: none;
+    background: none;
+}
+
