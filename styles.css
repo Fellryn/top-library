@@ -1,7 +1,8 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-image: linear-gradient(to top, rgb(64, 82, 247), rgb(113, 174, 253));
-    height: 100vh;
+    min-height: 100%;
+    background-attachment: fixed;
 }
 
 .container {
