@@ -28,11 +28,30 @@ function addBookToLibrary(book) {
     library.push(book);        
 }
 
-const book1 = new Book("The Expanse", "H.G. Wells", true);
+const book1 = new Book("The Expanse", "James S. A. Corey", false);
 addBookToLibrary(book1);
 
-const book2 = new Book("Three Body Problem", "Some Guy", false)
+const book2 = new Book("The Three-Body Problem", "Liu Cixin", true);
 addBookToLibrary(book2);
+
+const book3 = new Book("Dune", "Frank Herbert", true);
+addBookToLibrary(book3);
+
+const book4 = new Book("Neuromancer", "William Gibson", false);
+addBookToLibrary(book4);
+
+const book5 = new Book("Snow Crash", "Neal Stephenson", true);
+addBookToLibrary(book5);
+
+const book6 = new Book("Foundation", "Isaac Asimov", false);
+addBookToLibrary(book6);
+
+const book7 = new Book("Hyperion", "Dan Simmons", true);
+addBookToLibrary(book7);
+
+const book8 = new Book("Brave New World", "Aldous Huxley", false);
+addBookToLibrary(book8);
+
 
 const dialog = document.querySelector("#dialog");
 const showButton = document.querySelector("#add-book");
