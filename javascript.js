@@ -33,32 +33,30 @@ addBookToLibrary(book1);
 const book2 = new Book("Three Body Problem", "Some Guy", false)
 addBookToLibrary(book2);
 
-
-const table = document.querySelector("#library-table");
-const tableBody = table.querySelector("tbody");
+const grid = document.querySelector(".grid");
 
 function populateBookList() {
-    tableBody.innerHTML = "";
+    grid.innerHTML = "";
     for (let book of library) {
-        const entry = `<tr data-id="${book.id}">
-                    <td>${book.title}</td>
-                    <td>${book.author}</td>
-                    <td>${book.read}</td>
-                    <td>${book.id}</td>
-                    <td><button class="btn-read">Read</button><button class="btn-delete">Delete</button></td>
-                    </tr>`;
-        tableBody.innerHTML += (entry);
+        const entry = `<div class="card" data-id="${book.id}">
+                        <div>${book.title}</div>
+                        <div>${book.author}</div>
+                        <div>${book.read === true ? "Read" : "Not Read"}</div>
+                        <div><button class="btn-read">Read</button><button class="btn-delete">Delete</button></div>
+                        </div>`;
+        grid.innerHTML += (entry);
     }
 
     for (let book of library) {
-        const row = tableBody.querySelector(`[data-id="${book.id}"]`);
-        const btnRead = row.querySelector(".btn-read");
+        const card = grid.querySelector(`[data-id="${book.id}"]`);
+        
+        const btnRead = card.querySelector(".btn-read");
         btnRead.addEventListener('click', () => {
             book.read = !book.read;
             populateBookList();
         });
 
-        const btnDelete = row.querySelector(".btn-delete");
+        const btnDelete = card.querySelector(".btn-delete");
         btnDelete.addEventListener('click', () => {
             const index = library.indexOf(book);
             library.splice(index, 1);
