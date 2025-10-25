@@ -6,7 +6,8 @@ form.addEventListener('submit', (e) => {
     // e.preventDefault();
     const data = Object.fromEntries(new FormData(form));
     if (data.author === "" || data.title === "") {
-        alert("Please enter a title and author");
+        alert("Please enter a title and author.");
+        e.preventDefault();
         return;
     }
 
@@ -32,6 +33,18 @@ addBookToLibrary(book1);
 
 const book2 = new Book("Three Body Problem", "Some Guy", false)
 addBookToLibrary(book2);
+
+const dialog = document.querySelector("#dialog");
+const showButton = document.querySelector("#add-book");
+const closeButton = document.querySelector("#form > .btn-delete");
+
+showButton.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+closeButton.addEventListener('click', () => {
+    dialog.close();
+});
 
 const grid = document.querySelector(".grid");
 
