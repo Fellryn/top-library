@@ -71,7 +71,7 @@ function populateBookList() {
     grid.innerHTML = "";
     for (let book of library) {
         const entry = `<div class="card" data-id="${book.id}">
-                        <div>${book.title}</div>
+                        <div><h3>${book.title}</h3></div>
                         <div>${book.author}</div>
                         <div>${book.read === true ? "Read" : "Not Read"}</div>
                         <div><button class="btn-read">Read</button><button class="btn-delete">Delete</button></div>
