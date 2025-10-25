@@ -19,24 +19,6 @@ body {
     right: 10px
 }
 
-table {
-    margin: 0 auto;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-th,
-td {
-    padding: 5px;
-    border-radius: 2px;
-    margin: 0px;
-    background-color: rgb(241, 241, 241);
-}
-
-tbody tr:nth-of-type(2n + 2) td {
-    background-color: rgb(236, 236, 236);
-}
-
 .form-container {
     margin-top: 10px;
     width: fit-content;
